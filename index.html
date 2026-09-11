@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Yamini Gowda H.P | Student Profile</title>
+
+  <!-- Premium Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      min-height: 100vh;
+      color: #172033;
+      padding: 25px 15px;
+      position: relative;
+      overflow-x: hidden;
+
+      /* WHITE BACKGROUND */
+      background: #ffffff;
+    }
+
+    /* =========================================
+       ELECTRONICS / SIGNAL BACKGROUND
+       ========================================= */
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      pointer-events: none;
+
+      background:
+        radial-gradient(
+          circle at 10% 10%,
+          rgba(37, 99, 235, 0.08),
+          transparent 25%
+        ),
+        radial-gradient(
+          circle at 90% 85%,
+          rgba(79, 70, 229, 0.07),
+          transparent 28%
+        );
+    }
+
+    /* SIGNAL WAVES */
+
+    .signal {
+      position: fixed;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.13;
+    }
+
+    .signal svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .signal path {
+      fill: none;
+      stroke: #2563eb;
+      stroke-width: 2;
+    }
+
+    .signal-1 {
+      top: 4%;
+      left: -5%;
+      width: 360px;
+      height: 120px;
+      transform: rotate(-4deg);
+    }
+
+    .signal-2 {
+      top: 28%;
+      right: -8%;
+      width: 380px;
+      height: 130px;
+      transform: rotate(3deg);
+    }
+
+    .signal-3 {
+      bottom: 20%;
+      left: -8%;
+      width: 390px;
+      height: 130px;
+      transform: rotate(-3deg);
+    }
+
+    .signal-4 {
+      bottom: 2%;
+      right: -5%;
+      width: 360px;
+      height: 120px;
+      transform: rotate(4deg);
+    }
+
+    /* CIRCUIT DOTS */
+
+    .circuit {
+      position: fixed;
+      z-index: -1;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #2563eb;
+      opacity: 0.18;
+      box-shadow:
+        0 0 0 5px rgba(37, 99, 235, 0.04),
+        0 0 20px rgba(37, 99, 235, 0.15);
+    }
+
+    .circuit-1 {
+      top: 18%;
+      left: 8%;
+    }
+
+    .circuit-2 {
+      top: 40%;
+      right: 8%;
+    }
+
+    .circuit-3 {
+      bottom: 32%;
+      left: 7%;
+    }
+
+    .circuit-4 {
+      bottom: 12%;
+      right: 10%;
+    }
+
+    /* =========================================
+       MAIN CONTAINER
+       ========================================= */
+
+    .container {
+      width: 100%;
+      max-width: 480px;
+      margin: auto;
+      position: relative;
+    }
+
+    /* =========================================
+       TOP BRAND
+       ========================================= */
+
+    .brand {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .brand-logo {
+      width: 48px;
+      height: 48px;
+      margin: auto;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: linear-gradient(
+        135deg,
+        #2563eb,
+        #4f46e5
+      );
+
+      color: white;
+      font-weight: 800;
+      font-size: 18px;
+
+      box-shadow:
+        0 10px 25px rgba(37, 99, 235, 0.25);
+    }
+
+    /* PREMIUM TITLE FONT */
+
+    .brand h2 {
+      font-family: "Manrope", sans-serif;
+      font-size: 21px;
+      margin-top: 10px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      color: #172033;
+      line-height: 1.2;
+    }
+
+    .brand p {
+      font-size: 11px;
+      color: #64748b;
+      margin-top: 3px;
+      letter-spacing: 0.5px;
+    }
+
+    /* =========================================
+       MAIN CARD
+       ========================================= */
+
+    .profile-card {
+      background: rgba(255, 255, 255, 0.97);
+      border-radius: 28px;
+      overflow: hidden;
+
+      border: 1px solid rgba(226, 232, 240, 0.9);
+
+      box-shadow:
+        0 25px 60px rgba(15, 23, 42, 0.12),
+        0 4px 12px rgba(15, 23, 42, 0.04);
+    }
+
+    /* =========================================
+       PROFILE HEADER
+       ========================================= */
+
+    .profile-header {
+      position: relative;
+      padding: 30px 25px 28px;
+      text-align: center;
+
+      background:
+        linear-gradient(
+          135deg,
+          #af08e7,
+          #2563eb 55%,
+          #d9a60b
+        );
+
+      color: white;
+      overflow: hidden;
+    }
+
+    .profile-header::before {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      top: -90px;
+      right: -60px;
+    }
+
+    .profile-header::after {
+      content: "";
+      position: absolute;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.06);
+      bottom: -75px;
+      left: -40px;
+    }
+
+    /* =========================================
+       PHOTO
+       ========================================= */
+
+    .photo-wrapper {
+      position: relative;
+      z-index: 2;
+
+      width: 108px;
+      height: 108px;
+      margin: auto;
+
+      border-radius: 50%;
+      padding: 4px;
+
+      background: white;
+
+      box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .photo {
+      width: 100%;
+      height: 100%;
+
+      border-radius: 50%;
+      object-fit: cover;
+
+      background: #dbeafe;
+    }
+
+    .verified {
+      position: absolute;
+      right: 1px;
+      bottom: 5px;
+
+      width: 27px;
+      height: 27px;
+
+      border-radius: 50%;
+      background: #22c55e;
+
+      border: 3px solid white;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 12px;
+    }
+
+    .profile-header h1 {
+      position: relative;
+      z-index: 2;
+
+      margin-top: 15px;
+
+      font-size: 27px;
+      font-weight: 800;
+      letter-spacing: -0.6px;
+    }
+
+    .usn {
+      position: relative;
+      z-index: 2;
+
+      margin-top: 5px;
+
+      font-size: 13px;
+      opacity: 0.85;
+      font-weight: 500;
+    }
+
+    /* =========================================
+       BADGES
+       ========================================= */
+
+    .badges {
+      position: relative;
+      z-index: 2;
+
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+
+      margin-top: 16px;
+
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      background: rgba(255, 255, 255, 0.14);
+
+      border: 1px solid rgba(255, 255, 255, 0.22);
+
+      padding: 7px 11px;
+
+      border-radius: 30px;
+
+      font-size: 11px;
+      font-weight: 600;
+
+      backdrop-filter: blur(8px);
+    }
+
+    /* =========================================
+       CONTENT
+       ========================================= */
+
+    .content {
+      padding: 24px 20px 22px;
+    }
+
+    .section-title {
+      font-size: 12px;
+      font-weight: 800;
+
+      color: #94a3b8;
+
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+
+      margin-bottom: 12px;
+    }
+
+    /* =========================================
+       INFORMATION BOX
+       ========================================= */
+
+    .info-box {
+      display: flex;
+      align-items: center;
+
+      gap: 13px;
+
+      padding: 14px;
+      margin-bottom: 9px;
+
+      background: #f8fafc;
+
+      border: 1px solid #edf1f7;
+
+      border-radius: 15px;
+
+      transition: 0.2s ease;
+    }
+
+    .info-box:hover {
+      transform: translateY(-1px);
+
+      border-color: #dbeafe;
+
+      background: #f8fbff;
+    }
+
+    .icon {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+
+      border-radius: 12px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #eff6ff;
+
+      font-size: 18px;
+    }
+
+    .info-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .label {
+      display: block;
+
+      font-size: 10px;
+
+      color: #94a3b8;
+
+      font-weight: 600;
+
+      margin-bottom: 3px;
+    }
+
+    .value {
+      display: block;
+
+      font-size: 13px;
+
+      font-weight: 700;
+
+      color: #1e293b;
+
+      word-break: break-word;
+    }
+
+    /* =========================================
+       HIGHLIGHTS
+       ========================================= */
+
+    .highlights {
+      display: grid;
+
+      grid-template-columns: 1fr;
+
+      gap: 10px;
+
+      margin: 18px 0;
+    }
+
+    .highlight {
+      padding: 16px 12px;
+
+      text-align: center;
+
+      border-radius: 16px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #f8fafc,
+          #eef4ff
+        );
+
+      border: 1px solid #e5eaf3;
+    }
+
+    .highlight-icon {
+      font-size: 20px;
+    }
+
+    .highlight strong {
+      display: block;
+
+      margin-top: 7px;
+
+      font-size: 18px;
+
+      color: #172033;
+    }
+
+    .highlight span {
+      font-size: 10px;
+
+      color: #64748b;
+
+      font-weight: 600;
+    }
+
+    /* =========================================
+       SOCIAL BUTTONS
+       ========================================= */
+
+    .linkedin,
+    .instagram {
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 9px;
+
+      width: 100%;
+
+      padding: 14px;
+
+      border-radius: 14px;
+
+      color: white;
+
+      text-decoration: none;
+
+      font-size: 13px;
+
+      font-weight: 700;
+
+      transition: 0.2s ease;
+
+      margin-top: 10px;
+    }
+
+    /* LINKEDIN */
+
+    .linkedin {
+      background: #0a66c2;
+
+      box-shadow:
+        0 8px 20px rgba(10, 102, 194, 0.2);
+    }
+
+    .linkedin:hover {
+      transform: translateY(-2px);
+
+      background: #095ba9;
+    }
+
+    /* INSTAGRAM */
+
+    .instagram {
+      background:
+        linear-gradient(
+          135deg,
+          #833ab4,
+          #fd1d1d,
+          #fcb045
+        );
+
+      box-shadow:
+        0 8px 20px rgba(225, 48, 108, 0.2);
+    }
+
+    .instagram:hover {
+      transform: translateY(-2px);
+
+      opacity: 0.92;
+    }
+
+    /* =========================================
+       FOOTER
+       ========================================= */
+
+    .footer {
+      text-align: center;
+
+      padding: 17px 10px 4px;
+
+      font-size: 10px;
+
+      color: #94a3b8;
+    }
+
+    .scan-note {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 5px;
+
+      margin-bottom: 5px;
+
+      color: #64748b;
+
+      font-weight: 600;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+
+      background: #22c55e;
+
+      border-radius: 50%;
+    }
+
+    /* =========================================
+       MOBILE
+       ========================================= */
+
+    @media (max-width: 360px) {
+
+      body {
+        padding: 15px 10px;
+      }
+
+      .profile-header h1 {
+        font-size: 24px;
+      }
+
+      .content {
+        padding: 20px 15px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================================
+       ELECTRONICS SIGNAL BACKGROUND
+       ========================================= -->
+
+  <div class="signal signal-1">
+    <svg viewBox="0 0 400 120">
+      <path
+        d="
+          M0 65
+          L35 65
+          L45 30
+          L55 95
+          L65 65
+          L100 65
+          C120 65 125 25 145 25
+          C165 25 170 65 190 65
+          C210 65 215 105 235 105
+          C255 105 260 65 280 65
+          L400 65
+        "
+      />
+    </svg>
+  </div>
+
+
+  <div class="signal signal-2">
+    <svg viewBox="0 0 400 120">
+      <path
+        d="
+          M0 70
+          L40 70
+          L50 20
+          L60 105
+          L70 70
+          L105 70
+          C125 70 130 35 150 35
+          C170 35 175 70 195 70
+          C215 70 220 100 240 100
+          C260 100 265 70 285 70
+          L400 70
+        "
+      />
+    </svg>
+  </div>
+
+
+  <div class="signal signal-3">
+    <svg viewBox="0 0 400 120">
+      <path
+        d="
+          M0 60
+          L50 60
+          L60 100
+          L70 20
+          L80 60
+          L120 60
+          C145 60 150 30 170 30
+          C190 30 195 60 215 60
+          C235 60 240 90 260 90
+          C280 90 285 60 305 60
+          L400 60
+        "
+      />
+    </svg>
+  </div>
+
+
+  <div class="signal signal-4">
+    <svg viewBox="0 0 400 120">
+      <path
+        d="
+          M0 65
+          L45 65
+          L55 25
+          L65 105
+          L75 65
+          L110 65
+          C130 65 135 35 155 35
+          C175 35 180 65 200 65
+          C220 65 225 95 245 95
+          C265 95 270 65 290 65
+          L400 65
+        "
+      />
+    </svg>
+  </div>
+
+
+  <!-- CIRCUIT POINTS -->
+
+  <div class="circuit circuit-1"></div>
+  <div class="circuit circuit-2"></div>
+  <div class="circuit circuit-3"></div>
+  <div class="circuit circuit-4"></div>
+
+
+  <!-- =========================================
+       MAIN
+       ========================================= -->
+
+  <div class="container">
+
+    <!-- BRAND -->
+
+    <div class="brand">
+
+      <div class="brand-logo">
+        M
+      </div>
+
+      <h2>
+        MRIT Student Profile
+      </h2>
+
+      <p>
+        DIGITAL STUDENT IDENTITY
+      </p>
+
+    </div>
+
+
+    <!-- PROFILE CARD -->
+
+    <div class="profile-card">
+
+
+      <!-- PROFILE HEADER -->
+
+      <div class="profile-header">
+
+        <div class="photo-wrapper">
+
+          <img
+            src="yamini_gowda.jpeg"
+            alt="YAMINI GOWDA H.P"
+            class="photo"
+            onerror="
+              this.style.display='none';
+              this.parentElement.style.background=
+              'linear-gradient(135deg,#bfdbfe,#dbeafe)'
+            "
+          >
+
+          <div class="verified">
+            ✓
+          </div>
+
+        </div>
+
+
+        <h1>
+          YAMINI GOWDA H.P
+        </h1>
+
+
+        <p class="usn">
+          USN • 4MU23EC0060
+        </p>
+
+
+        <div class="badges">
+
+          <span class="badge">
+            ECE
+          </span>
+
+          <span class="badge">
+            4th Year
+          </span>
+
+          <span class="badge">
+            MRIT
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- CONTENT -->
+
+      <div class="content">
+
+
+        <div class="section-title">
+          Student Information
+        </div>
+
+
+        <!-- COLLEGE -->
+
+        <div class="info-box">
+
+          <div class="icon">
+            🎓
+          </div>
+
+          <div class="info-text">
+
+            <span class="label">
+              COLLEGE
+            </span>
+
+            <span class="value">
+              MRIT
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- COURSE -->
+
+        <div class="info-box">
+
+          <div class="icon">
+            📚
+          </div>
+
+          <div class="info-text">
+
+            <span class="label">
+              COURSE
+            </span>
+
+            <span class="value">
+              Electronics & Communication Engineering
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- YEAR -->
+
+        <div class="info-box">
+
+          <div class="icon">
+            📅
+          </div>
+
+          <div class="info-text">
+
+            <span class="label">
+              CURRENT YEAR
+            </span>
+
+            <span class="value">
+              4th Year
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HIGHLIGHT -->
+
+        <div class="highlights">
+
+          <div class="highlight">
+
+            <div class="highlight-icon">
+              ⭐
+            </div>
+
+            <strong>
+              8.5
+            </strong>
+
+            <span>
+              CGPA
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- CONTACT -->
+
+        <div class="section-title">
+          Contact
+        </div>
+
+
+        <div class="info-box">
+
+          <div class="icon">
+            📞
+          </div>
+
+          <div class="info-text">
+
+            <span class="label">
+              CONTACT NUMBER
+            </span>
+
+            <span class="value">
+              8861352332
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- LINKEDIN -->
+
+        <a
+          href="https://www.linkedin.com/in/n-r-chethan-kumar-986905308"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="linkedin"
+        >
+
+          <span>
+            in
+          </span>
+
+          View LinkedIn Profile
+
+          <span>
+            →
+          </span>
+
+        </a>
+
+
+        <!-- INSTAGRAM -->
+
+        <a
+          href="https://www.instagram.com/YOUR_USERNAME/"
+          target="https://www.instagram.com/itz__chetzzz?stkn=ZG52c2l2Zml2OGQ0"
+          rel="noopener noreferrer"
+          class="instagram"
+        >
+
+          <span>
+            ◎
+          </span>
+
+          View Instagram Profile
+
+          <span>
+            →
+          </span>
+
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+      <div class="scan-note">
+
+        <span class="dot"></span>
+
+        Profile accessed via QR scan
+
+      </div>
+
+
+      <div>
+        MRIT • Digital Student Identity
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

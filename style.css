@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+body {
+    font-family: "Manrope", sans-serif;
+}
+
+.brand h2 {
+    font-family: "Manrope", sans-serif;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    color: #172033;
+    margin-top: 10px;
+    line-height: 1.2;
+}
